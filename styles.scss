@@ -1,0 +1,50 @@
+@use "./partials/mixins" as *;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.page-title {
+    margin: 0;
+    padding: 1.5rem;
+    background-color: lime;
+    border-bottom: 0.25rem dashed magenta;
+
+    @include tablet {
+        background-color: magenta;
+        border-bottom: 0.25rem solid lime;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        padding: 0 1rem;
+        margin: 1rem 0;
+
+        @include tablet {
+            width: 50%;
+        }
+
+        @include desktop {
+            width: 25%;
+        }
+    }
+
+    &__photo {
+        width: 100%;
+    }
+
+}
